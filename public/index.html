@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta
+         name="viewport"
+         content="width=device-width, initial-scale=1.0,maximum-scale=1"
+      />
+
+      <title>Weather Application</title>
+
+      <!-- Loading third party fonts -->
+      <link
+         href="http://fonts.googleapis.com/css?family=Roboto:300,400,700|"
+         rel="stylesheet"
+         type="text/css"
+      />
+      <link
+         rel="stylesheet"
+         href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+         crossorigin="anonymous"
+      />
+
+      <!-- Loading main css file -->
+      <link rel="stylesheet" href="css/style.css" />
+
+      <!--[if lt IE 9]>
+         <script src="js/ie-support/html5.js"></script>
+         <script src="js/ie-support/respond.js"></script>
+      <![endif]-->
+   </head>
+
+   <body>
+      <div class="site-content">
+         <div class="site-header">
+            <div class="container">
+               <a href="index.html" class="branding">
+                  <img src="images/logo.png" alt="" class="logo" />
+                  <div class="logo-type">
+                     <h1 class="site-title">Company name</h1>
+                     <small class="site-description">tagline goes here</small>
+                  </div>
+               </a>
+
+               <!-- Default snippet for navigation -->
+               <div class="main-navigation">
+                  <button type="button" class="menu-toggle">
+                     <i class="fa fa-bars"></i>
+                  </button>
+                  <ul class="menu">
+                     <li class="menu-item current-menu-item">
+                        <a href="index.html">Home</a>
+                     </li>
+                     <li class="menu-item">
+                        <a href="contact.html">Contact</a>
+                     </li>
+                  </ul>
+                  <!-- .menu -->
+               </div>
+               <!-- .main-navigation -->
+
+               <div class="mobile-navigation"></div>
+            </div>
+         </div>
+         <!-- .site-header -->
+
+         <div class="hero" data-bg-image="images/banner.png">
+            <div class="container">
+               <form action="#" onsubmit="return false" class="find-location">
+                  <input
+                     id="city-input"
+                     type="text"
+                     placeholder="Find your location..."
+                  />
+                  <input id="btn-find" type="submit" value="Find" />
+               </form>
+            </div>
+         </div>
+         <div class="forecast-table">
+            <div style="margin-bottom: 250px" class="container">
+               <div class="forecast-container">
+                  <div class="today forecast">
+                     <div class="forecast-header">
+                        <div class="day">Monday</div>
+                     </div>
+                     <!-- .forecast-header -->
+                     <div class="forecast-content">
+                        <div class="location">
+                           <span style="margin-right: 0" id="city"
+                              >Dinajpur</span
+                           >, <span id="country">BD</span>
+                        </div>
+                        <div class="degree">
+                           <div title="Temperature" id="temp" class="num">
+                              Temp
+                           </div>
+                        </div>
+                        <span title="Max Temperature"
+                           ><i
+                              style="margin-right: 5px"
+                              class="far fa-temperature-high"
+                           ></i
+                           ><span id="temp-max">Temp Max</span></span
+                        >
+                        <span title="Min Temperature"
+                           ><i
+                              style="margin-right: 5px"
+                              class="far fa-temperature-low"
+                           ></i
+                           ><span id="temp-min">Temp Min</span></span
+                        >
+                        <span title="Pressure"
+                           ><i class="fad fa-wind-warning"></i>
+                           <span id="pressure"> Pressure </span>
+                        </span>
+                        <span title="Humidity"
+                           ><i
+                              style="margin-right: 5px"
+                              class="fas fa-humidity"
+                           ></i
+                           ><span id="humidity"> Humidity </span></span
+                        >
+                     </div>
+                  </div>
+
+                  <div class="forecast">
+                     <div
+                        style="background: #2d303d; padding: 20px"
+                        class="forecast-header"
+                     ></div>
+                     <!-- .forecast-header -->
+                     <div
+                        style="background: #323544; height: 33vh"
+                        class="forecast-content"
+                     >
+                        <div class="forecast-icon"></div>
+                        <div class="degree"></div>
+                     </div>
+                  </div>
+                  <div class="forecast">
+                     <div style="padding: 20px" class="forecast-header"></div>
+                     <!-- .forecast-header -->
+                     <div class="forecast-content">
+                        <div class="forecast-icon">
+                           <img
+                              id="condition"
+                              src="images/icons/icon-14.svg"
+                              alt=""
+                              width="48"
+                           />
+                        </div>
+                        <p>
+                           <strong><span id="main">Cloud</span></strong> (
+                           <span id="description"> Scattered Cloud </span> )
+                        </p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <!-- history area -->
+         <div style="position: relative" class="history" id="history">
+            <div id="master-history">
+               <div
+                  style="
+                     position: absolute;
+                     top: -19%;
+                     width: 100%;
+                     text-align: center;
+                  "
+                  class="history-heading"
+               >
+                  <h1 id="history-heading">Recently Searched Items</h1>
+               </div>
+
+               <div class="container">
+                  <div class="forecast-container">
+                     <div class="today forecast">
+                        <!-- .forecast-header -->
+                        <div class="forecast-content">
+                           <div class="location">
+                              <span
+                                 style="margin-right: 0"
+                                 id="city"
+                                 class="city"
+                                 >Dinajpur</span
+                              >, <span id="country">BD</span>
+                           </div>
+                           <div class="degree">
+                              <div
+                                 style="font-size: 4rem"
+                                 title="Temperature"
+                                 id="temp"
+                                 class="num temp"
+                              >
+                                 Temp
+                              </div>
+                           </div>
+                           <span title="Max Temperature"
+                              ><i
+                                 style="margin-right: 5px"
+                                 class="far fa-temperature-high"
+                              ></i
+                              ><span id="temp-max" class="temp-max"
+                                 >Temp Max</span
+                              ></span
+                           >
+                           <span title="Min Temperature"
+                              ><i
+                                 style="margin-right: 5px"
+                                 class="far fa-temperature-low"
+                              ></i
+                              ><span id="temp-min" class="temp-min"
+                                 >Temp Min</span
+                              ></span
+                           >
+                           <span title="Pressure"
+                              ><i class="fad fa-wind-warning"></i>
+                              <span id="pressure" class="pressure">
+                                 Pressure
+                              </span>
+                           </span>
+                           <span title="Humidity"
+                              ><i
+                                 style="margin-right: 5px"
+                                 class="fas fa-humidity"
+                              ></i
+                              ><span id="humidity" class="humidity">
+                                 Humidity
+                              </span></span
+                           >
+                        </div>
+                     </div>
+
+                     <div class="forecast">
+                        <!-- .forecast-header -->
+                        <div
+                           style="background: #323544; height: 26vh"
+                           class="forecast-content"
+                        >
+                           <div class="forecast-icon"></div>
+                           <div class="degree"></div>
+                        </div>
+                     </div>
+                     <div class="forecast">
+                        <!-- .forecast-header -->
+                        <div class="forecast-content">
+                           <div class="forecast-icon">
+                              <img
+                                 id="condition"
+                                 src="images/icons/icon-14.svg"
+                                 alt=""
+                                 width="48"
+                              />
+                           </div>
+                           <p>
+                              <strong
+                                 ><span id="main" class="main"
+                                    >Cloud</span
+                                 ></strong
+                              >
+                              (
+                              <span id="description" class="description">
+                                 Scattered Cloud
+                              </span>
+                              )
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <!-- .main-content -->
+
+         <footer class="site-footer">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-8">
+                     <!-- <form action="#" class="subscribe-form">
+                        <input
+                           type="text"
+                           placeholder="Enter your email to subscribe..."
+                        />
+                        <input type="submit" value="Subscribe" />
+                     </form> -->
+                     <p class="colophon">All rights reserved</p>
+                  </div>
+                  <div class="col-md-3 col-md-offset-1">
+                     <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </footer>
+         <!-- .site-footer -->
+      </div>
+
+      <!-- axios -->
+      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+      <!-- custom JS -->
+      <script src="js/index.js"></script>
+   </body>
+</html>
